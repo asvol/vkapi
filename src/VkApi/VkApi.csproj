@@ -30,6 +30,26 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Fizzler, Version=0.1.15619.0, Culture=neutral, PublicKeyToken=4ebff4844e382110, processorArchitecture=MSIL">
+      <HintPath>..\packages\Fizzler.1.0.0\lib\net35\Fizzler.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Fizzler.Systems.HtmlAgilityPack, Version=0.1.15619.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Fizzler.Systems.HtmlAgilityPack.1.0.0\lib\net35\Fizzler.Systems.HtmlAgilityPack.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.4.6.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlAgilityPack.1.4.6\lib\Net45\HtmlAgilityPack.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.4.3.7\lib\net45\NLog.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -40,8 +60,50 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Api\Boards\Data\TopicsResult.cs" />
+    <Compile Include="Api\Boards\Data\VkBoardsGetTopicsResult.cs" />
+    <Compile Include="Api\Boards\IVkBoardsApi.cs" />
+    <Compile Include="Api\Boards\VkBoardsApi.cs" />
+    <Compile Include="Api\Friends\Data\VkAddFriendsResultEnum.cs" />
+    <Compile Include="Api\Friends\Data\VkFriendsFieldsOrder.cs" />
+    <Compile Include="Api\Friends\IVkFriendsApi.cs" />
+    <Compile Include="Api\Friends\VkFriendsApi.cs" />
+    <Compile Include="Api\Groups\Data\VkGroupMembersResult.cs" />
+    <Compile Include="Api\Groups\Data\VkMembersGroupSort.cs" />
+    <Compile Include="Api\Groups\IVkGroupsApi.cs" />
+    <Compile Include="Api\Groups\VkGroupsApi.cs" />
+    <Compile Include="Api\Messages\IVkMessages.cs" />
+    <Compile Include="Api\Messages\VkMessages.cs" />
+    <Compile Include="Capcha\Antigate.cs" />
+    <Compile Include="Capcha\ICapchaResolver.cs" />
+    <Compile Include="Exceptions\VkCapchaNeededException.cs" />
+    <Compile Include="Exceptions\VkErrorException.cs" />
+    <Compile Include="Exceptions\VkLoginException.cs" />
+    <Compile Include="Exceptions\VkRequestTooManyRequestsPerSecond.cs" />
+    <Compile Include="Api\IVkApi.cs" />
+    <Compile Include="Login\VkLogin.cs" />
+    <Compile Include="Login\VkScope.cs" />
+    <Compile Include="Login\VkSessionInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Common\EnumHelper.cs" />
+    <Compile Include="Common\EnumValueAttribute.cs" />
+    <Compile Include="Common\VkApiBase.cs" />
+    <Compile Include="Common\VkRequestParam.cs" />
+    <Compile Include="Common\VkResultBase.cs" />
+    <Compile Include="Common\VkResultError.cs" />
+    <Compile Include="Api\Users\Data\VkNameCase.cs" />
+    <Compile Include="Api\Users\Data\VkUserFieldsEnum.cs" />
+    <Compile Include="Api\Users\Data\VkUserResult.cs" />
+    <Compile Include="Api\Users\IVkUsersApi.cs" />
+    <Compile Include="Api\Users\VkUsersApi.cs" />
+    <Compile Include="Api\VkApi.cs" />
+    <Compile Include="Api\VkApiExtentions.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Api\Messages\Data\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
